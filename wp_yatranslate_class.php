@@ -95,6 +95,22 @@ public function yaTranslateRequest($content)
 		'format' => $this->format,
 		);
 	$url = $this->url;
+
+        $response_data = wp_remote_post( $url, array(
+	'method' => 'POST',
+	'timeout' => 45,
+	'redirection' => 5,
+	'httpversion' => '1.0',
+	'blocking' => true,
+	'headers' => array(),
+	'body' => $params,
+	'cookies' => array()
+    )
+);
+
+
+/*
+
     $curlObject = curl_init();
         curl_setopt($curlObject, CURLOPT_URL, $url);
         curl_setopt($curlObject, CURLOPT_SSL_VERIFYPEER, false);
@@ -118,6 +134,7 @@ public function yaTranslateRequest($content)
         	echo "Can not read the data";
         	return $content;
         }
+*/
 }
 
 public function yaTranslateContentAndComment($content)
