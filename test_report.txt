@@ -1,4 +1,6 @@
 task2 - done, but have not tested yet
+task 1 - test ok
+
 
 
 
